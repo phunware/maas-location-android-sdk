@@ -1,4 +1,5 @@
 com.phunware.location
 com.phunware.location.bluedot
+com.phunware.location.manager
 com.phunware.location.provider
 com.phunware.location.provider.interceptor
