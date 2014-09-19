@@ -58,7 +58,6 @@ PwLocationProvider locationProvider = pwLocationProviderFactory.getPwSlLocationP
 ####PwMockLocationProvider
 The PwMockLocationProvider class allows you to implement a mock provider for testing and validation. This is extremely useful for location testing when you are not able to be on location at a venue which was a proper location provider. The mock location provider is initialized with configuration object which is populated with JSON data.
 
-It's important to note that the floorIDMapping property does not need to be specified for the PWMockLocationManager. The location floor IDs in the JSON should be equivalent to the building floor IDs.
 ```java
 // Create PwLocationProviderFactory
 PwLocationProviderFactory pwLocationProviderFactory = new PwLocationProviderFactory();
