@@ -1,7 +1,7 @@
 #PWLocation SDK for Android (BETA)
 ================
 
-Version 0.9.0
+Version 0.9.1
 
 This is Phunware's Android SDK for the Location module. Visit http://maas.phunware.com/ for more details and to sign up.
 
@@ -53,6 +53,17 @@ floorIdMap.put("<YOUR_SL_FLOOR_ID_1>", <!-- YOUR_PW_FLOOR_ID_1 -->);
 PwLocationProvider locationProvider = pwLocationProviderFactory.getPwSlLocationProvider(mContext,
     new PwLocationProviderConnectivityDetector(), new PwFloorIdMapLocationInterceptor(floorIDMapping),
     new PwSlLocationManager(mContext, <!-- YOUR_SL_MAP_ID -->, <!-- YOUR_SL_CUSTOMER_ID -->)));
+```
+
+####PwMseLocationProvider
+The PwMseLocationProvider class defines the interface for configuring the delivery of Cisco Mobility Services Engine (MSE) location-related events to your application. You use an instance of this class to establish the parameters that determine when location events should be delivered and to start and stop the actual delivery of those events. 
+```java
+// Create PwLocationProviderFactory
+PwLocationProviderFactory pwLocationProviderFactory = new PwLocationProviderFactory();
+
+// Create PwMseLocationProvider
+PwLocationProvider locationProvider = pwLocationProviderFactory.getPwMseLocationProvider(mContext, 
+    new PwLocationProviderConnectivityDetector(), <!-- YOUR_VENUE_GUID -->);
 ```
 
 ####PwMockLocationProvider
