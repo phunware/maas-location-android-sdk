@@ -64,6 +64,7 @@ PwLocationProviderFactory pwLocationProviderFactory = new PwLocationProviderFact
 // Create PwMseLocationProvider
 PwLocationProvider locationProvider = pwLocationProviderFactory.getPwMseLocationProvider(mContext, 
     new PwLocationProviderConnectivityDetector(), <!-- YOUR_VENUE_GUID -->);
+```
 
 ####PwMockLocationProvider
 The PwMockLocationProvider class allows you to implement a mock provider for testing and validation. This is extremely useful for location testing when you are not able to be on location at a venue which was a proper location provider. The mock location provider is initialized with configuration object which is populated with JSON data.
