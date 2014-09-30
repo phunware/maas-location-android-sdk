@@ -55,6 +55,16 @@ PwLocationProvider locationProvider = pwLocationProviderFactory.getPwSlLocationP
     new PwSlLocationManager(mContext, <!-- YOUR_SL_MAP_ID -->, <!-- YOUR_SL_CUSTOMER_ID -->)));
 ```
 
+####PwMseLocationProvider
+The PwMseLocationProvider class defines the interface for configuring the delivery of Cisco Mobility Services Engine (MSE) location-related events to your application. You use an instance of this class to establish the parameters that determine when location events should be delivered and to start and stop the actual delivery of those events. 
+```java
+// Create PwLocationProviderFactory
+PwLocationProviderFactory pwLocationProviderFactory = new PwLocationProviderFactory();
+
+// Create PwMseLocationProvider
+PwLocationProvider locationProvider = pwLocationProviderFactory.getPwMseLocationProvider(mContext, 
+    new PwLocationProviderConnectivityDetector(), <!-- YOUR_VENUE_GUID -->);
+
 ####PwMockLocationProvider
 The PwMockLocationProvider class allows you to implement a mock provider for testing and validation. This is extremely useful for location testing when you are not able to be on location at a venue which was a proper location provider. The mock location provider is initialized with configuration object which is populated with JSON data.
 
