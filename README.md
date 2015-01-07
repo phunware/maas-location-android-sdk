@@ -1,4 +1,4 @@
-#PWLocation SDK for Android (BETA)
+#PWLocation SDK for Android
 ================
 
 Version 1.0.0
