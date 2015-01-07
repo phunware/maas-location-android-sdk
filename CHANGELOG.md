@@ -1,6 +1,13 @@
 #PWLocation SDK for Android Change log
 
-##0.9.1 (Coming Soon)
+##1.0.0 (January 6th, 2015)
+ * Updated SLDistribution to 3.0.10
+ * Updated MaaSCore to 1.3.11
+
+##0.9.2 (Monday, November 24th, 2014)
+ * Updated SLDistribution to 3.0.7
+
+##0.9.1 (Tuesday, October 7th, 2014)
  * Fix building warnings
  * Add location update failure callback
  * Updated MaaSCore to 1.3.8
