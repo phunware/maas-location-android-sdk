@@ -1,7 +1,7 @@
 #PWLocation SDK for Android
 ================
 
-Version 1.0.0
+Version 1.1.0
 
 This is Phunware's Android SDK for the Location module. Visit http://maas.phunware.com/ for more details and to sign up.
 
