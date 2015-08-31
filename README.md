@@ -42,7 +42,7 @@ Integration
 The PwSlLocationProvider class defines the interface for configuring the delivery of BLE location-related events to your application. You use an instance of this class to establish the parameters that determine when location events should be delivered and to start and stop the actual delivery of those events. 
 
 ```java
-Add the following service to the AndroidManifest.xml
+// Add the following service to the AndroidManifest.xml
 <service android:name="com.senionlab.slutilities.service.SLIndoorLocationService" />
 
 // Create PwLocationProviderFactory
