@@ -1,5 +1,9 @@
 #PWLocation SDK for Android Change log
 
+##1.1.0 (August 31th, 2015)
+ * Updated SLDistribution to 4.1.12
+ * Add Fused Location provider
+
 ##1.0.0 (January 6th, 2015)
  * Updated SLDistribution to 3.0.10
  * Updated MaaSCore to 1.3.11
