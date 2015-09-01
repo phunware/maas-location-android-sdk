@@ -1,7 +1,7 @@
 #PWLocation SDK for Android Change log
 
 ##1.1.0 (August 31th, 2015)
-*  Updated `PwSLLocationProvider` internals to provide more accurate and battery efficent location updates.
+ *  Updated `PwSLLocationProvider` internals to provide more accurate and battery efficent location updates.
     > IMPORTANT: This update changes the map identifier value used to initialize `PwSLLocationProvider`. Please contact Phunware for your new map identifier values. These new values apply only to PWLocation v1.1.0 and beyond.
  *  Added a new location provider, `PwFusedLocationProvider` that allows you to fused multiple location provider updates based on polygons and floor identifiers. Please read more about this provider and how to use it here: https://confluence.phunware.com/pages/viewpage.action?pageId=12551886
  *  Added updateInterval to `PwMSELocationProvider` that allows you to modify the update frequency of the MSE location provider. The default update frequency is `3` seconds.
