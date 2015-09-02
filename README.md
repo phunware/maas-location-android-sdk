@@ -1,7 +1,7 @@
 #PWLocation SDK for Android
 ================
 
-Version 1.0.0
+Version 1.1.0
 
 This is Phunware's Android SDK for the Location module. Visit http://maas.phunware.com/ for more details and to sign up.
 
@@ -42,6 +42,9 @@ Integration
 The PwSlLocationProvider class defines the interface for configuring the delivery of BLE location-related events to your application. You use an instance of this class to establish the parameters that determine when location events should be delivered and to start and stop the actual delivery of those events. 
 
 ```java
+// Add the following service to the AndroidManifest.xml
+<service android:name="com.senionlab.slutilities.service.SLIndoorLocationService" />
+
 // Create PwLocationProviderFactory
 PwLocationProviderFactory pwLocationProviderFactory = new PwLocationProviderFactory();
 
@@ -53,6 +56,45 @@ floorIdMap.put("<YOUR_SL_FLOOR_ID_1>", <!-- YOUR_PW_FLOOR_ID_1 -->);
 PwLocationProvider locationProvider = pwLocationProviderFactory.getPwSlLocationProvider(mContext,
     new PwLocationProviderConnectivityDetector(), new PwFloorIdMapLocationInterceptor(floorIDMapping),
     new PwSlLocationManager(mContext, <!-- YOUR_SL_MAP_ID -->, <!-- YOUR_SL_CUSTOMER_ID -->)));
+```
+
+####PwFusedLocationProvider
+The PwFusedLocationProvider class defines the interface for configuring the delivery of BLE/MSE/QC location-related events to your application. You use an instance of this class to establish the parameters that determine when location events should be delivered and to start and stop the actual delivery of those events. 
+
+```java
+// Create PwLocationProviderFactory
+PwLocationProviderFactory pwLocationProviderFactory = new PwLocationProviderFactory();
+
+// Create default location provider, which is applied when no valid location reported from given indoor location provider.
+<!-- The GPS location provider will be used when default location provider is null. -->
+PwLocationProvider defaultLocationProvider = null; // locationProviderFactory.getPwGPSLocationProvider(getApplicationContext());
+
+// Create zone configuration for location provider
+<!-- Create an indoor location provider -->
+PwLocationProvider indoorLocationProvider = locationProviderFactory.getPwSlLocationProvider(context, connectivityDetector, locationInterceptor, pwSlLocationManager);
+<!-- Create zones for the indoor location provider -->
+// Setup our zone coordinates
+PolygonOptions polygonOptions = new PolygonOptions();
+polygonOptions.add(new LatLng(30.0,-97.0));
+polygonOptions.add(new LatLng(30.1,-97.9));
+polygonOptions.add(new LatLng(30.2,-97.8));
+polygonOptions.add(new LatLng(30.3,-97.7));
+// Setup floorIDs that the polygon is applied
+List<Long> zoneFloorIDs = new ArrayList<Long>();
+zoneFloorIDs.add(10001L);
+zoneFloorIDs.add(10002L);
+zoneFloorIDs.add(10003L);
+// Instantiate fused location provider zone
+PwFusedLocationProviderZone zone = new PwFusedLocationProviderZone(polygonOptions, zoneFloorIDs);
+List<PwFusedLocationProviderZone> zones = new ArrayList<PwFusedLocationProviderZone>();
+zones.add(zone);
+<!-- Create zone configuration based on location provider & zones  -->
+PwFusedLocationProviderZoneConfiguration zoneConfiguration = new PwFusedLocationProviderZoneConfiguration(indoorLocationProvider, zones);
+List<PwFusedLocationProviderZoneConfiguration> zoneConfigurations = new ArrayList<PwFusedLocationProviderZoneConfiguration>;
+zoneConfigurations.add(zoneConfiguration);
+
+// Create PwFusedLocationProvider
+PwLocationProvider fusedLocationProvider = locationProviderFactory.getPwFusedLocationProvider(getApplicationContext(), defaultLocationProvider, zoneConfigurations);
 ```
 
 ####PwMseLocationProvider
