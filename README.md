@@ -33,7 +33,32 @@ public void onCreate() {
     /* Other code */
 }
 ```
+#Needed Permissions
+-----------
+In the Android manifest, the following permissions are needed:
 
+```
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_COARSE_UPDATE" />
+<uses-permission android:name="android.permission.BLUETOOTH"/>
+<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+<uses-permission android:name="android.permission.WAKE_LOCK"/>
+<uses-feature android:name="android.hardware.bluetooth_le" android:required="false"/>
+```
+
+Note that BLE and Android SDK version 4.3 (API 18) or above are required if Bluetooth is actually is going to be used. If your users only are going to use Bluetooth for positioning, you should change the android:required attribute to true (this will filter out non-BLE devices at Google Play). Observe that the WAKE_LOCK permission can be removed, but background navigation performance might become worse.
+
+To use the positioning service, the Android manifest needs to have the following tag in its application tag
+```
+<service android:name="com.senionlab.slutilities.service.SLIndoorLocationService">
+</service>
+```
 
 Integration
 -----------
