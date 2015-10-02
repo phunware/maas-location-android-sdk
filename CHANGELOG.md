@@ -1,5 +1,14 @@
 #PWLocation SDK for Android Change log
 
+
+##1.1.1 (October 2th, 2015)
+ *  Change the endpoints of phunware.com to use HTTPS
+ *  Upgrade SenionLab SDK to v4.1.3
+ *  Rename the lib name from MaaSLocation.jar to PWLocation.jar
+ 
+##1.1.0 (August 31th, 2015)
+ *  Added a new location provider
+
 ##1.1.0 (August 31th, 2015)
  *  Added a new location provider, `PwFusedLocationProvider` that allows you to fused multiple location provider updates based on polygons and floor identifiers. Please read more about this provider and how to use it here: https://confluence.phunware.com/pages/viewpage.action?pageId=12551886
  *  Added updateInterval to `PwMSELocationProvider` that allows you to modify the update frequency of the MSE location provider. The default update frequency is `3` seconds.
