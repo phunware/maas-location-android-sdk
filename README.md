@@ -1,7 +1,7 @@
 #PWLocation SDK for Android
 ================
 
-Version 1.1.1
+Version 3.0.0
 
 This is Phunware's Android SDK for the Location module. Visit http://maas.phunware.com/ for more details and to sign up.
 
@@ -9,30 +9,48 @@ This is Phunware's Android SDK for the Location module. Visit http://maas.phunwa
 
 Requirements
 ------------
-* Android SDK 2.3+ (API level 9) or above
-* Latest MaaS Core
-
+* Android SDK 4.0.3+ (API level 15) or above
+* Google Play Services 9.0.2
 
 
 Documentation
 -------------
 
-MaaS Location documentation is included in the Documents folder in the repository as both HTML and as a .jar. You can also find the latest documentation here: http://phunware.github.io/maas-location-android-sdk/
+Phunware Location documentation is included both in the Documents folder in the repository as HTML and via maven. You can also find the latest documentation here: http://phunware.github.io/maas-location-android-sdk/
 
 
 Prerequisites
 -------------
 
-Install the module in the `Application` `onCreate` method before registering keys. For example:
-``` Java
-@Override
-public void onCreate() {
-    super.onCreate();
-    /* Other code */
-    PwCoreSession.getInstance().installModules(PwLocationModule.getInstance(), ...);
-    /* Other code */
-}
-```
+Add the following to your `repositories` tag in your top level `build.gradle` file.
+
+ ```XML
+ projects {
+   repositories {
+     ...
+     maven {
+         url "https://nexus.phunware.com/content/groups/public/"
+     }
+     ...
+   }
+ }
+ ```
+
+ Import the Phunware Location Library by adding the following to your app's `build.gradle` file
+ ```
+ compile 'com.phunware.location:location:3.0.0'
+ ```
+
+ Install the module in the `Application` `onCreate` method before registering keys. For example:
+ ``` Java
+ @Override
+ public void onCreate() {
+     super.onCreate();
+     /* Other code */
+     PwCoreSession.getInstance().installModules(PwLocationModule.getInstance(), ...);
+     /* Other code */
+ }
+ ```
 #Needed Permissions
 -----------
 In the Android manifest, the following permissions are needed:
@@ -64,7 +82,7 @@ Integration
 -----------
 
 ####PwSlLocationProvider
-The PwSlLocationProvider class defines the interface for configuring the delivery of BLE location-related events to your application. You use an instance of this class to establish the parameters that determine when location events should be delivered and to start and stop the actual delivery of those events. 
+The PwSlLocationProvider class defines the interface for configuring the delivery of BLE location-related events to your application. You use an instance of this class to establish the parameters that determine when location events should be delivered and to start and stop the actual delivery of those events.
 
 ```java
 // Add the following service to the AndroidManifest.xml
@@ -84,7 +102,7 @@ PwLocationProvider locationProvider = pwLocationProviderFactory.getPwSlLocationP
 ```
 
 ####PwFusedLocationProvider
-The PwFusedLocationProvider class defines the interface for configuring the delivery of BLE/MSE/QC location-related events to your application. You use an instance of this class to establish the parameters that determine when location events should be delivered and to start and stop the actual delivery of those events. 
+The PwFusedLocationProvider class defines the interface for configuring the delivery of BLE/MSE/QC location-related events to your application. You use an instance of this class to establish the parameters that determine when location events should be delivered and to start and stop the actual delivery of those events.
 
 ```java
 // Create PwLocationProviderFactory
@@ -123,13 +141,13 @@ PwLocationProvider fusedLocationProvider = locationProviderFactory.getPwFusedLoc
 ```
 
 ####PwMseLocationProvider
-The PwMseLocationProvider class defines the interface for configuring the delivery of Cisco Mobility Services Engine (MSE) location-related events to your application. You use an instance of this class to establish the parameters that determine when location events should be delivered and to start and stop the actual delivery of those events. 
+The PwMseLocationProvider class defines the interface for configuring the delivery of Cisco Mobility Services Engine (MSE) location-related events to your application. You use an instance of this class to establish the parameters that determine when location events should be delivered and to start and stop the actual delivery of those events.
 ```java
 // Create PwLocationProviderFactory
 PwLocationProviderFactory pwLocationProviderFactory = new PwLocationProviderFactory();
 
 // Create PwMseLocationProvider
-PwLocationProvider locationProvider = pwLocationProviderFactory.getPwMseLocationProvider(mContext, 
+PwLocationProvider locationProvider = pwLocationProviderFactory.getPwMseLocationProvider(mContext,
     new PwLocationProviderConnectivityDetector(), <!-- YOUR_VENUE_GUID -->);
 ```
 
@@ -149,7 +167,7 @@ boolean repeat = true;
 // Create MockLocationsDisabledListener listener handles when "Allow mock locations" is disabled in "Developer options"
 MockLocationsDisabledListener listener = new MockLocationsDisabledListener() {
   public void onMockLocationsDisabled() {
-    // handles when "Allow mock locations" is disabled in "Developer options" 
+    // handles when "Allow mock locations" is disabled in "Developer options"
   }
 };
 
@@ -164,22 +182,22 @@ PwLocationListener listener = new PwLocationListener() {
   public void onConnectionFailed(PwConnectionResult pwConnectionResult) {
     // handle failure...    
   }
-  
+
   @Override
   public void onLocationChanged(Location location) {
     // handle update...
   }
-  
+
   @Override
   public void onStatusChanged(String s, int i, Bundle bundle) {
     // handle status change...
   }
-  
+
   @Override
   public void onProviderEnabled(String s) {
     // handle provider change...
   }
-  
+
   @Override
   public void onProviderDisabled(String s) {
     // handle provider change...  
