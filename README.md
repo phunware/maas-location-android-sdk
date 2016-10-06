@@ -1,7 +1,7 @@
 #PWLocation SDK for Android
 ================
 
-Version 3.0.0
+Version 3.0.1
 
 This is Phunware's Android SDK for the Location module. Visit http://maas.phunware.com/ for more details and to sign up.
 
@@ -10,7 +10,6 @@ This is Phunware's Android SDK for the Location module. Visit http://maas.phunwa
 Requirements
 ------------
 * Android SDK 4.0.3+ (API level 15) or above
-* Google Play Services 9.0.2
 
 
 Documentation
@@ -38,7 +37,7 @@ Add the following to your `repositories` tag in your top level `build.gradle` fi
 
  Import the Phunware Location Library by adding the following to your app's `build.gradle` file
  ```
- compile 'com.phunware.location:location:3.0.0'
+ compile 'com.phunware.location:location:3.0.1'
  ```
 
  Install the module in the `Application` `onCreate` method before registering keys. For example:
