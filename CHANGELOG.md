@@ -1,5 +1,8 @@
 #PWLocation SDK for Android Change log
 
+##3.0.1 (October 6th, 2016)
+ *  Using the latest PWCore 3.0.2
+ * Updated Google Play Services to 9.6.1
 
 ##3.0.0 (August 1st, 2016)
  *  Using the latest PWCore 3.0.0
