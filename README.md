@@ -10,7 +10,6 @@ This is Phunware's Android SDK for the Location module. Visit http://maas.phunwa
 Requirements
 ------------
 * Android SDK 4.0.3+ (API level 15) or above
-* Google Play Services 9.0.2
 
 
 Documentation
