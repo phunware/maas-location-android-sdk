@@ -85,7 +85,7 @@ PwSlLocationProvider locationProvider = SenionProviderFactory.create(this,
 ```
 
 ####PwFusedLocationProvider
-The PwFusedLocationProvider class defines the interface for configuring the delivery of BLE/MSE/QC location-related events to your application. You use an instance of this class to establish the parameters that determine when location events should be delivered and to start and stop the actual delivery of those events.
+The PwFusedLocationProvider class defines the interface for configuring the delivery of BLE/CMX/QC location-related events to your application. You use an instance of this class to establish the parameters that determine when location events should be delivered and to start and stop the actual delivery of those events.
 
 ```java
 // Create PwLocationProviderFactory
@@ -127,21 +127,21 @@ PwLocationProvider fusedLocationProvider = locationProviderFactory.getPwFusedLoc
 ####PwCmxLocationProvider
 The PwCmxLocationProvider class defines the interface for configuring the delivery of Cisco Mobility Services Engine (CMX) location-related events to your application. You use an instance of this class to establish the parameters that determine when location events should be delivered and to start and stop the actual delivery of those events.
 ```java
-// Create PwMseLocationProvider
+// Create PwCmxLocationProvider
 PwLocationProvider locationProvider = CMXProviderFactory.create(mContext, <!-- YOUR_VENUE_GUID -->)
 .createLocationProvider();
 ```
 
-If for some reason multiple copies of  your building exist in MaaS, only the first one registered with CMX will report the correct floorIDs. For any other building copies, you will need to pass a map of MSE floor IDs to MaaS floor IDs like so:
+If for some reason multiple copies of  your building exist in MaaS, only the first one registered with CMX will report the correct floorIDs. For any other building copies, you will need to pass a map of CMX floor IDs to MaaS floor IDs like so:
 ```java
-// Create floor ID mappin
+// Create floor ID mapping
 Map<String, Long> floorIdMap = new ArrayMap<String, Long>();
 
 int[] cmxFloorIds = getResources().getIntArray(R.array.cmx_floor_ids);
 int[] pwFloorIDs = getResources().getIntArray(R.array.pw_floor_ids);
 
 if (cmxFloorIds.length != pwFloorIDs.length
-        || mseFloorIds.length == 0) {
+        || cmxFloorIds.length == 0) {
     Log.d(TAG, "The floorIdMapping length doesn't match");
     return null;
 }
@@ -150,7 +150,7 @@ int length = cmxFloorIds.length;
 for (int i = 0; i < length; i++) {
     floorIdMap.put(String.valueOf(cmxFloorIds[i]), (long) pwFloorIDs[i]);
 }
-// Create PwMseLocationProvider
+// Create PwCmxLocationProvider
 PwLocationProvider locationProvider = CMXProviderFactory.create(mContext, <!-- YOUR_VENUE_GUID -->,
 floorIdMap).createLocationProvider();
 ```
@@ -176,11 +176,12 @@ PwMockLocationProvider locationProvider = (PwMockLocationProvider) MockProviderF
 ```
 
 ####PwManagedLocationProvider
-The PwManagedLocationProvider class allows you to implement Phunware's managed location software to further improve upon locations from your location provider hardware. Currently supported location providers are: CMX, CMX + Senion, Senion, and BeaconPoint. From a code standpoint, setting up a managed location provider is the same regardless of your setup. All of these attributes are set through the MaaS portal.
+The PwManagedLocationProvider class allows you to implement Phunware's managed location software to further improve upon locations from your location provider hardware. Currently supported location providers are: CMX, CMX + Senion, Senion, and BeaconPoint. From a code standpoint, setting up a managed location provider is the same regardless of your setup. All of these attributes are set through the MaaS portal. Some of the IDs passed into the builder can be null if those location providers are not being used.
 
 ```java
 // Create ManagedLocationProviderFactoryBuilder
-ManagedProviderFactory.ManagedProviderFactoryBuilder builder = new ManagedProviderFactory.ManagedProviderFactoryBuilder();
+ManagedProviderFactory.ManagedProviderFactoryBuilder builder =
+new ManagedProviderFactory.ManagedProviderFactoryBuilder();
 
 //build location provider
 PwManagedLocationProvider provider = builder.application(mApplication)
