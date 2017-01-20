@@ -176,7 +176,7 @@ PwMockLocationProvider locationProvider = (PwMockLocationProvider) MockProviderF
 ```
 
 ####PwManagedLocationProvider
-The PwManagedLocationProvider class allows you to implement Phunware's managed location software to further improve upon locations from your location provider hardware. Currently supported location providers are: CMX, CMX + Senion, Senion, and BeaconPoint. From a code standpoint, setting up a managed location provider is the same regardless of your setup. All of these attributes are set through the MaaS portal. Some of the IDs passed into the builder can be null if those location providers are not being used.
+The PwManagedLocationProvider class allows you to implement Phunware's managed location software to further improve upon locations from your location provider hardware. Currently supported location providers are: CMX, CMX + Senion, Senion, and BeaconPoint. From a code standpoint, setting up a managed location provider is the same regardless of your setup. All of these attributes are set through the MaaS portal. The builder pattern only requires that you set the IDs for the location providers you are using.
 
 ```java
 // Create ManagedLocationProviderFactoryBuilder
@@ -186,9 +186,11 @@ new ManagedProviderFactory.ManagedProviderFactoryBuilder();
 //build location provider
 PwManagedLocationProvider provider = builder.application(mApplication)
       .context(mContext)
-      .venueId(<!--YOUR_BUILDING_ID-->)
+      .buildingId(<!--YOUR_BUILDING_ID-->)
+      // if using Senion/BLE location provider
       .slCustomerId(<!--YOUR_SL_CUSTOMER_ID-->)
       .slMapKey(<!--YOUR_SL_MAP_ID-->)
+      // if using BeaconPoint/vBLE location provider
       .bpOrgId(<!--YOUR_BEACONPOINT_ORG_ID-->)
       .build()
       .createLocationProvider();
