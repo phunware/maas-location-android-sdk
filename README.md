@@ -1,7 +1,7 @@
 #PWLocation SDK for Android
 ================
 
-Version 3.0.1
+Version 3.1.0
 
 This is Phunware's Android SDK for the Location module. Visit http://maas.phunware.com/ for more details and to sign up.
 
@@ -37,13 +37,12 @@ Add the following to your `repositories` tag in your top level `build.gradle` fi
 
  The location library is broken into separate components so that you can import only the parts of the library needed for your project. All packages can be imported by adding the following to your app's `build.gradle` file
  ```
- compile 'com.phunware.location:provider-managed:3.0.1'
- compile 'com.phunware.location:provider-senion:3.0.1'
- compile 'com.phunware.location:provider-cmx:3.0.1'
- compile 'com.phunware.location:provider-fused:3.0.1'
- compile 'com.phunware.location:provider-gps:3.0.1'
- compile 'com.phunware.location:provider-mock:3.0.1'
- compile 'com.phunware.location:core:3.0.1'
+ compile 'com.phunware.location:provider-managed:3.1.0'
+ compile 'com.phunware.location:provider-senion:3.1.0'
+ compile 'com.phunware.location:provider-cmx:3.1.0'
+ compile 'com.phunware.location:provider-gps:3.1.0'
+ compile 'com.phunware.location:provider-mock:3.1.0'
+ compile 'com.phunware.location:core:3.1.0'
  ```
  Importing any of the providers will automatically include the `core` package. When you import `provider-managed`, all associated location provider libraries are included.
 
@@ -82,46 +81,6 @@ PwSlLocationProvider locationProvider = SenionProviderFactory.create(this,
                     getSenionMapKey(),
                     floorIdMap)
                     .createLocationProvider();
-```
-
-####PwFusedLocationProvider
-The PwFusedLocationProvider class defines the interface for configuring the delivery of BLE/CMX/QC location-related events to your application. You use an instance of this class to establish the parameters that determine when location events should be delivered and to start and stop the actual delivery of those events.
-
-```java
-// Create PwLocationProviderFactory
-PwLocationProviderFactory pwLocationProviderFactory = new PwLocationProviderFactory();
-
-// Create default location provider, which is applied when no valid location reported from given indoor location provider.
-<!-- The GPS location provider will be used when default location provider is null. -->
-PwLocationProvider defaultLocationProvider = null;
-// locationProviderFactory.getPwGPSLocationProvider(getApplicationContext());
-
-// Create zone configuration for location provider
-<!-- Create an indoor location provider -->
-PwLocationProvider indoorLocationProvider = locationProviderFactory.getPwSlLocationProvider(context, connectivityDetector, locationInterceptor, pwSlLocationManager);
-<!-- Create zones for the indoor location provider -->
-// Setup our zone coordinates
-PolygonOptions polygonOptions = new PolygonOptions();
-polygonOptions.add(new LatLng(30.0,-97.0));
-polygonOptions.add(new LatLng(30.1,-97.9));
-polygonOptions.add(new LatLng(30.2,-97.8));
-polygonOptions.add(new LatLng(30.3,-97.7));
-// Setup floorIDs that the polygon is applied
-List<Long> zoneFloorIDs = new ArrayList<Long>();
-zoneFloorIDs.add(10001L);
-zoneFloorIDs.add(10002L);
-zoneFloorIDs.add(10003L);
-// Instantiate fused location provider zone
-PwFusedLocationProviderZone zone = new PwFusedLocationProviderZone(polygonOptions, zoneFloorIDs);
-List<PwFusedLocationProviderZone> zones = new ArrayList<PwFusedLocationProviderZone>();
-zones.add(zone);
-<!-- Create zone configuration based on location provider & zones  -->
-PwFusedLocationProviderZoneConfiguration zoneConfiguration = new PwFusedLocationProviderZoneConfiguration(indoorLocationProvider, zones);
-List<PwFusedLocationProviderZoneConfiguration> zoneConfigurations = new ArrayList<PwFusedLocationProviderZoneConfiguration>;
-zoneConfigurations.add(zoneConfiguration);
-
-// Create PwFusedLocationProvider
-PwLocationProvider fusedLocationProvider = locationProviderFactory.getPwFusedLocationProvider(getApplicationContext(), defaultLocationProvider, zoneConfigurations);
 ```
 
 ####PwCmxLocationProvider
