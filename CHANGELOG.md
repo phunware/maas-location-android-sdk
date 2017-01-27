@@ -1,5 +1,9 @@
 #PWLocation SDK for Android Change log
 
+##3.1.0 (January 27th, 2017)
+ * Initial release of Managed Provider
+ * Minor bug fixes and enhancements
+
 ##3.0.1 (October 6th, 2016)
  *  Using the latest PWCore 3.0.2
  * Updated Google Play Services to 9.6.1
