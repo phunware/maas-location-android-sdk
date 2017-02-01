@@ -42,7 +42,7 @@ Add the following to your `repositories` tag in your top level `build.gradle` fi
  compile 'com.phunware.location:provider-cmx:3.1.0'
  compile 'com.phunware.location:provider-gps:3.1.0'
  compile 'com.phunware.location:provider-mock:3.1.0'
- compile 'com.phunware.location:core:3.1.0'
+ compile 'com.phunware.location:location-core:3.1.0'
  ```
  Importing any of the providers will automatically include the `core` package. When you import `provider-managed`, all associated location provider libraries are included.
 
