@@ -1,5 +1,9 @@
 #PWLocation SDK for Android Change log
 
+##3.1.1 (March 28th, 2017)
+ * Managed provider updated to pull keys from portal
+ * Minor bug fixes and enhancements
+
 ##3.1.0 (January 27th, 2017)
  * Initial release of Managed Provider
  * Minor bug fixes and enhancements
