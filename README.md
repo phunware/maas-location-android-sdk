@@ -1,7 +1,7 @@
 #PWLocation SDK for Android
 ================
 
-Version 3.1.0
+Version 3.1.1
 
 This is Phunware's Android SDK for the Location module. Visit http://maas.phunware.com/ for more details and to sign up.
 
@@ -37,12 +37,12 @@ Add the following to your `repositories` tag in your top level `build.gradle` fi
 
  The location library is broken into separate components so that you can import only the parts of the library needed for your project. All packages can be imported by adding the following to your app's `build.gradle` file
  ```
- compile 'com.phunware.location:provider-managed:3.1.0'
- compile 'com.phunware.location:provider-senion:3.1.0'
- compile 'com.phunware.location:provider-cmx:3.1.0'
- compile 'com.phunware.location:provider-gps:3.1.0'
- compile 'com.phunware.location:provider-mock:3.1.0'
- compile 'com.phunware.location:core:3.1.0'
+ compile 'com.phunware.location:provider-managed:3.1.1'
+ compile 'com.phunware.location:provider-senion:3.1.1'
+ compile 'com.phunware.location:provider-cmx:3.1.1'
+ compile 'com.phunware.location:provider-gps:3.1.1'
+ compile 'com.phunware.location:provider-mock:3.1.1'
+ compile 'com.phunware.location:core:3.1.1'
  ```
  Importing any of the providers will automatically include the `core` package. When you import `provider-managed`, all associated location provider libraries are included.
 
@@ -135,7 +135,7 @@ PwMockLocationProvider locationProvider = (PwMockLocationProvider) MockProviderF
 ```
 
 ####PwManagedLocationProvider
-The PwManagedLocationProvider class allows you to implement Phunware's managed location software to further improve upon locations from your location provider hardware. Currently supported location providers are: CMX, CMX + Senion, Senion, BeaconPoint, and Mist. From a code standpoint, setting up a managed location provider is the same regardless of your setup. All of these attributes are set through the MaaS portal. The builder pattern only requires that you set the IDs for the location providers you are using.
+The PwManagedLocationProvider class allows you to implement Phunware's managed location software to further improve upon locations from your location provider hardware. Currently supported location providers are: CMX, CMX + Senion, Senion, and BeaconPoint. From a code standpoint, setting up a managed location provider is the same regardless of your setup. All of these attributes are set through the MaaS portal. The builder pattern only requires that you set the IDs for the location providers you are using.
 
 ```java
 // Create ManagedLocationProviderFactoryBuilder
@@ -149,10 +149,8 @@ PwManagedLocationProvider provider = builder.application(mApplication)
       // if using Senion/BLE location provider
       .slCustomerId(<!--YOUR_SL_CUSTOMER_ID-->)
       .slMapKey(<!--YOUR_SL_MAP_ID-->)
-      // if using BeaconPoint location provider
+      // if using BeaconPoint/vBLE location provider
       .bpOrgId(<!--YOUR_BEACONPOINT_ORG_ID-->)
-      // if using Mist location provider
-      .mistOrgId(<!--YOUR_MIST_ORG_ID-->)
       .build()
       .createLocationProvider();
 ```
@@ -188,7 +186,3 @@ PwLocationListener listener = new PwLocationListener() {
 
 locationProvider.requestLocationUpdates(listener);
 ```
-
------------
-
-You understand and consent to Phunware’s Privacy Policy located at www.phunware.com/privacy. If your use of Phunware’s software requires a Privacy Policy of your own, you also agree to include the terms of Phunware’s Privacy Policy in your Privacy Policy to your end users.
