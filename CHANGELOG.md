@@ -1,5 +1,9 @@
 #PWLocation SDK for Android Change log
 
+##3.1.2 (June 2, 2017)
+ * ManagedProvider gracefully supports API 18 (API 21 required)
+ * Mist algorithm rework
+
 ##3.1.1 (March 28th, 2017)
  * Managed provider updated to pull keys from portal
  * Minor bug fixes and enhancements
