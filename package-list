@@ -6,6 +6,4 @@ com.phunware.location.provider_cmx.model
 com.phunware.location.provider_gps
 com.phunware.location.provider_managed
 com.phunware.location.provider_managed.wrapper
-com.phunware.location.provider_mock
 com.phunware.location.provider_senion
-com.phunware.location_core
