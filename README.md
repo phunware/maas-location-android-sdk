@@ -65,7 +65,6 @@ Note that BLE and Android SDK version 4.3 (API 18) or above are required if Blue
 
 Integration
 -----------
-  All the location provider types extend `PwLocationProvider`
 
 #### PwManagedLocationProvider
 The PwManagedLocationProvider class allows you to implement Phunware's managed location software to further improve upon locations from your location provider hardware. Currently supported location providers are: CMX, CMX + BLE, BLE, and vBLE (Mist/BeaconPoint). From a code standpoint, setting up a managed location provider is the same regardless of your setup. All of these attributes are set through the MaaS portal for the specific providers that are used. The builder pattern only requires instances of the application, context, and buildingId you are using.
