@@ -1,5 +1,9 @@
 #PWLocation SDK for Android Change log
 
+##3.1.3 (June 27, 2017)
+ * Mist updated to 1.1.0
+ * Algorithm rework
+
 ##3.1.2 (June 2, 2017)
  * ManagedProvider gracefully supports API 18 (API 21 required)
  * Mist algorithm rework
