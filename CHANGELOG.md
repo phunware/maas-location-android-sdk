@@ -1,5 +1,8 @@
 #PWLocation SDK for Android Change log
 
+##3.1.4 (June 30, 2017)
+ * Mist fix for multiple instantiations
+
 ##3.1.3 (June 27, 2017)
  * Mist updated to 1.1.0
  * Algorithm rework
