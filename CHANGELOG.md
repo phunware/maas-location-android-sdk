@@ -1,5 +1,10 @@
 #PWLocation SDK for Android Change log
 
+##3.2.0 (Oct 11, 2017)
+ * Updated Google Play Services to 11.4.0
+ * Updated to Core 3.2.0
+ * Various Bug fixes
+
 ##3.1.5 (July 21, 2017)
  * Mist v1.1.3
  * latency fix
