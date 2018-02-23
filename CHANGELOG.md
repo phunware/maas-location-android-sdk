@@ -1,5 +1,5 @@
 # Location SDK Changelog
-## 3.3.0 (Friday, Feb 23nd, 2018)
+## 3.3.0 (Friday, Feb 23rd, 2018)
 #### Features
 * New BLE provider (Phunware Locate)
 
