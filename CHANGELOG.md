@@ -1,4 +1,10 @@
 # Location SDK Changelog
+## 3.4.0 (Thursday, Apr 5th, 2018)
+#### Features
+* Updated Google Play Services to 11.8.0
+* Mist updated to 1.4.22
+* Various Bug fixes
+
 ## 3.3.1 (Tuesday, Mar 20th, 2018)
 #### Features
 * Updates made to Locate algorithm
