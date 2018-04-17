@@ -1,4 +1,8 @@
 # Location SDK Changelog
+## 3.4.1 (Tuesday, Apr 17th, 2018)
+#### Features
+* Updated Locate algorithm
+
 ## 3.4.0 (Thursday, Apr 5th, 2018)
 #### Features
 * Updated Google Play Services to 11.8.0
