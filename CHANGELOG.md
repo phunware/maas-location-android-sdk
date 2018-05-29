@@ -1,4 +1,9 @@
 # Location SDK Changelog
+## 3.4.2 (Friday, May 25th, 2018)
+#### Features
+* Updated Locate algorithm
+* Various Bug fixes
+
 ## 3.4.1 (Tuesday, Apr 17th, 2018)
 #### Features
 * Updated Locate algorithm
