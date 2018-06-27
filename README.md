@@ -10,7 +10,7 @@ This is Phunware's Android SDK for the Location module. Visit http://maas.phunwa
 Requirements
 ------------
 * Android SDK 4.0.3+ (API level 15) or above
-* Architectures supported: armeabi-v7a, armeabi
+* Architectures supported: armeabi-v7a, armeabi, arm64-v8a
 
 
 Documentation
