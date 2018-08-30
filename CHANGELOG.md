@@ -1,4 +1,10 @@
 # Location SDK Changelog
+## 3.4.5 (Thursday, Aug 30th, 2018)
+#### Bug fixes / performance enhancements
+* Updated Locate algorithm
+* Improved floor change detection
+* BLE restart logic for certain BLE chipsets
+
 ## 3.4.4 (Tuesday, Jul 31st, 2018)
 #### Features
 * Updated Locate algorithm
