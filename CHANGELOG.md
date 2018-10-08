@@ -1,4 +1,8 @@
 # Location SDK Changelog
+## 3.5.1 (Monday, Oct 8th, 2018)
+#### Features
+* Updated Locate algorithm
+
 ## 3.5.0 (Wednesday, Sept 19th, 2018)
 #### Features
 * Updated debug dot mechanism
