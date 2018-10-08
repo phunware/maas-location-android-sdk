@@ -1,5 +1,15 @@
 # Location SDK Migration Guide
 
+## Upgrade from 3.5.0 to 3.5.1
+
+#### General
+
+No major changes,  updated Locate algorithm.
+
+#### Upgrade Steps
+
+1. Open the `build.gradle` from your project and change the compile statement to `com.phunware.location:location:3.5.1` and then sync the project.
+
 ## Upgrade from 3.1+ to 3.5.0
 
 #### General
