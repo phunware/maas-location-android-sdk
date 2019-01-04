@@ -1,5 +1,5 @@
 # Location SDK Changelog
-## 3.6.0 (Friday, Jan 4th, 2018)
+## 3.6.0 (Thursday, Dec 20th, 2018)
 #### Features
 * Updated to Google Play Services 16.0.0
 * Updated to Core 3.5.0
