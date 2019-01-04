@@ -40,7 +40,7 @@ Add the following to your `repositories` tag in your top level `build.gradle` fi
  The location library is broken into separate components so that you can import only the parts of the library needed for your project. All packages can be imported by adding the following to your app's `build.gradle` file
  ```
  compile 'com.phunware.location:provider-managed:3.6.0'
- compile 'com.phunware.location:location-core:3.60'
+ compile 'com.phunware.location:location-core:3.6.0'
  ```
  Importing any of the providers will automatically include the `core` package. When you import `provider-managed`, all associated location provider libraries are included.
 
