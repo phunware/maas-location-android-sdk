@@ -1,4 +1,10 @@
 # Location SDK Changelog
+## 3.6.0 (Thursday, Dec 20th, 2018)
+#### Features
+* Updated to Google Play Services 16.0.0
+* Updated to Core 3.5.0
+* Built with Android Support Library 28.0.0
+
 ## 3.5.1 (Monday, Oct 8th, 2018)
 #### Features
 * Updated Locate algorithm
