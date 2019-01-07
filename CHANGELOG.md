@@ -37,6 +37,7 @@
 #### Features
 * Updated Locate algorithm
 * Various Bug fixes
+* Mist updated to 1.4.23
 
 ## 3.4.1 (Tuesday, Apr 17th, 2018)
 #### Features
