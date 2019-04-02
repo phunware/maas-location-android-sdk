@@ -2,5 +2,7 @@ com.phunware.azul.wrapper
 com.phunware.location.provider_managed
 com.phunware.location.provider_managed.cmx.bluedot
 com.phunware.location.provider_managed.cmx.mars
+com.phunware.location.provider_managed.config
 com.phunware.location.provider_managed.fingerprinting
+com.phunware.location.provider_managed.model
 com.phunware.location.provider_managed.wrapper
