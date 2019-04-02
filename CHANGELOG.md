@@ -1,4 +1,9 @@
 # Location SDK Changelog
+## 3.7.0 (Tuesday, Apr 2nd, 2019)
+#### Features
+* Ability to blend GPS with indoor location providers
+* Add Managed Compass for use with Mapping SDK to improve heading experience
+
 ## 3.6.0 (Thursday, Dec 20th, 2018)
 #### Features
 * Updated to Google Play Services 16.0.0
@@ -37,7 +42,6 @@
 #### Features
 * Updated Locate algorithm
 * Various Bug fixes
-* Mist updated to 1.4.23
 
 ## 3.4.1 (Tuesday, Apr 17th, 2018)
 #### Features
