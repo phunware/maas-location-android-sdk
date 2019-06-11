@@ -1,4 +1,8 @@
 # Location SDK Changelog
+## 3.7.1 (Tuesday, Jun 11th, 2019)
+#### Bug fixes / performance enhancements
+* Fixed an issue in the native layer
+
 ## 3.7.0 (Tuesday, Apr 2nd, 2019)
 #### Features
 * Ability to blend GPS with indoor location providers
