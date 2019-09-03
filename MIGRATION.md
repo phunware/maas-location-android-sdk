@@ -1,17 +1,17 @@
 # Location SDK Migration Guide
 
-## Upgrade from 3.7.0 to 3.7.1
+## Upgrade from 3.7.x to 3.7.2
 
 #### General
 
-This release has bug fixes .
+This release has bug fixes and performance improvements.
 
 #### Upgrade Steps
 
-1. Open the `build.gradle` from your project and change the implementation statement to `com.phunware.location:location:3.7.1` and then sync the project.
+1. Open the `build.gradle` from your project and change the implementation statement to `com.phunware.location:location:3.7.2` and then sync the project.
 
 
-## Upgrade from 3.6.0 to 3.7.0
+## Upgrade from 3.6.x to 3.7.0
 
 #### General
 
@@ -21,7 +21,7 @@ Updated locate algorithm .
 
 1. Open the `build.gradle` from your project and change the implementation statement to `com.phunware.location:location:3.7.0` and then sync the project.
 
-## Upgrade from 3.5.1 to 3.6.0
+## Upgrade from 3.5.x to 3.6.0
 
 #### General
 
@@ -30,16 +30,6 @@ No major changes,  updated Google Play Services.
 #### Upgrade Steps
 
 1. Open the `build.gradle` from your project and change the compile statement to `com.phunware.location:location:3.6.0` and then sync the project.
-
-## Upgrade from 3.5.0 to 3.5.1
-
-#### General
-
-No major changes,  updated Locate algorithm.
-
-#### Upgrade Steps
-
-1. Open the `build.gradle` from your project and change the compile statement to `com.phunware.location:location:3.5.1` and then sync the project.
 
 ## Upgrade from 3.1+ to 3.5.0
 
@@ -57,7 +47,7 @@ All of the debug dot callbacks have been internalized into the Mapping SDK.
 Open the `build.gradle` from your project and change the compile statement to `com.phunware.mapping:mapping:3.7.0` and then sync the project.
 4. After creating a `PhunwareMapManager` object, call the `showDebugDots(boolean)` method to enable or disable the debug dot functionality.
 
-## Upgrade from 3.4.4 to 3.4.5
+## Upgrade from 3.4.x to 3.4.5
 
 #### General
 
@@ -66,46 +56,6 @@ No major changes,  updated Locate algorithm.
 #### Upgrade Steps
 
 1. Open the `build.gradle` from your project and change the compile statement to `com.phunware.location:location:3.4.5` and then sync the project.
-
-## Upgrade from 3.4.3 to 3.4.4
-
-#### General
-
-No major changes,  updated Locate algorithm.
-
-#### Upgrade Steps
-
-1. Open the `build.gradle` from your project and change the compile statement to `com.phunware.location:location:3.4.4` and then sync the project.
-
-## Upgrade from 3.4.2 to 3.4.3
-
-#### General
-
-No major changes,  updated Locate algorithm.
-
-#### Upgrade Steps
-
-1. Open the `build.gradle` from your project and change the compile statement to `com.phunware.location:location:3.4.3` and then sync the project.
-
-## Upgrade from 3.4.1 to 3.4.2
-
-#### General
-
-No major changes,  updated Locate algorithm.
-
-#### Upgrade Steps
-
-1. Open the `build.gradle` from your project and change the compile statement to `com.phunware.location:location:3.4.2` and then sync the project.
-
-## Upgrade from 3.4.0 to 3.4.1
-
-#### General
-
-No major changes,  updated Locate algorithm.
-
-#### Upgrade Steps
-
-1. Open the `build.gradle` from your project and change the compile statement to `com.phunware.location:location:3.4.1` and then sync the project.
 
 ## Upgrade from 3.3.x to 3.4.0
 
