@@ -1,4 +1,8 @@
 # Location SDK Changelog
+## 3.7.2 (Tuesday, Sep 3rd, 2019)
+#### Bug fixes / performance enhancements
+* Updated guava to 28.1-android
+
 ## 3.7.1 (Tuesday, Jun 11th, 2019)
 #### Bug fixes / performance enhancements
 * Fixed an issue in the native layer
