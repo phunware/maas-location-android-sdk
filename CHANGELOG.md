@@ -1,4 +1,8 @@
 # Location SDK Changelog
+## 3.7.3 (Thursday, Sep 19th, 2019)
+#### Bug Fixes
+* Added unique names for modules to address issues with duplicate kotlin_module files
+
 ## 3.7.2 (Tuesday, Sep 3rd, 2019)
 #### Bug fixes / performance enhancements
 * Updated guava to 28.1-android
