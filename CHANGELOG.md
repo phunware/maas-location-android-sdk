@@ -1,5 +1,5 @@
 # Location SDK Changelog
-## 3.7.3 (Thursday, Sep 19th, 2019)
+## 3.7.3 (Wednesday, Sep 19th, 2019)
 #### Bug Fixes
 * Added unique names for modules to address issues with duplicate kotlin_module files
 
