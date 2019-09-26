@@ -28,7 +28,11 @@ ant.properties
 local.properties
 
 # Other
-.DS_Store
 tmpcaptures
 captures
 *.exec
+
+# OS-specific files
+.DS_Store?
+ehthumbs.db
+Thumbs.db

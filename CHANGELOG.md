@@ -1,5 +1,11 @@
 # Location SDK Changelog
-## 3.7.3 (Thursday, Sep 19th, 2019)
+## 3.7.4 (Wednesday, Sep 25th, 2019)
+#### Bug fixes / performance enhancements
+* Improved transition between GPS and BLE
+* Improved blue dot accuracy
+* Floor detection works better with GPS enabled
+
+## 3.7.3 (Wednesday, Sep 19th, 2019)
 #### Bug Fixes
 * Added unique names for modules to address issues with duplicate kotlin_module files
 
