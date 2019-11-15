@@ -1,4 +1,10 @@
 # Location SDK Changelog
+## 3.7.5 (Friday, Nov 15th, 2019)
+#### Bug fixes / performance enhancements
+* Improved blue dot accuracy when initially transitioning from GPS to BLE location providers
+* Improved managed compass
+* Increase threshold for dead reckoning
+
 ## 3.7.4 (Wednesday, Sep 25th, 2019)
 #### Bug fixes / performance enhancements
 * Improved transition between GPS and BLE
