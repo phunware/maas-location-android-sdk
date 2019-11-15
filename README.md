@@ -1,7 +1,7 @@
 # PWLocation SDK for Android
 ================
 
-Version 3.7.4
+Version 3.7.5
 
 This is Phunware's Android SDK for the Location module. Visit http://maas.phunware.com/ for more details and to sign up.
 
@@ -39,8 +39,8 @@ Add the following to your `repositories` tag in your top level `build.gradle` fi
 
  The location library is broken into separate components so that you can import only the parts of the library needed for your project. All packages can be imported by adding the following to your app's `build.gradle` file
  ```
- implementation 'com.phunware.location:provider-managed:3.7.4'
- implementation 'com.phunware.location:location-core:3.7.4'
+ implementation 'com.phunware.location:provider-managed:3.7.5'
+ implementation 'com.phunware.location:location-core:3.7.5'
  ```
  Importing any of the providers will automatically include the `core` package. When you import `provider-managed`, all associated location provider libraries are included.
 
