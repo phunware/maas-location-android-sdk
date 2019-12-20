@@ -1,4 +1,10 @@
 # Location SDK Changelog
+## 3.7.6 (Friday, Dec 20th, 2019)
+#### Bug fixes / performance enhancements
+* Fixed an issue where blue dot re-acquisitions were taking too long
+* Fixed a crash caused by bad values in beacon data
+* Internal performance updates
+
 ## 3.7.5 (Friday, Nov 15th, 2019)
 #### Bug fixes / performance enhancements
 * Improved blue dot accuracy when initially transitioning from GPS to BLE location providers
