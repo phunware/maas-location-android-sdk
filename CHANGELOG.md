@@ -1,4 +1,11 @@
 # Location SDK Changelog
+## 3.7.7 (Wednesday, January 8th, 2019)
+#### Bug fixes / performance enhancements
+* Improved accuracy for managed compass
+* Improved walking vs stationary detection
+* Improved blue dot accuracy when transitioning between indoor and outdoor navigation
+* Improved code stability and performance
+
 ## 3.7.6 (Friday, Dec 20th, 2019)
 #### Bug fixes / performance enhancements
 * Fixed an issue where blue dot re-acquisitions were taking too long
