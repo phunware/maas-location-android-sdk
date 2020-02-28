@@ -1,5 +1,11 @@
 # Location SDK Changelog
-## 3.7.7 (Wednesday, January 8th, 2019)
+## 3.7.8 (Friday, February 28th, 2020)
+#### Bug fixes / performance enhancements
+* Added support for Centrak beacons
+* Added support for GPS only venues
+* Fixed issues with vBLE provider
+
+## 3.7.7 (Wednesday, January 8th, 2020)
 #### Bug fixes / performance enhancements
 * Improved accuracy for managed compass
 * Improved walking vs stationary detection
