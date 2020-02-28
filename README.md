@@ -1,7 +1,7 @@
 # PWLocation SDK for Android
 ================
 
-Version 3.7.7
+Version 3.7.8
 
 This is Phunware's Android SDK for the Location module. Visit http://maas.phunware.com/ for more details and to sign up.
 
@@ -39,8 +39,8 @@ Add the following to your `repositories` tag in your top level `build.gradle` fi
 
  The location library is broken into separate components so that you can import only the parts of the library needed for your project. All packages can be imported by adding the following to your app's `build.gradle` file
  ```
- implementation 'com.phunware.location:provider-managed:3.7.7'
- implementation 'com.phunware.location:location-core:3.7.7'
+ implementation 'com.phunware.location:provider-managed:3.7.8'
+ implementation 'com.phunware.location:location-core:3.7.8'
  ```
  Importing any of the providers will automatically include the `core` package. When you import `provider-managed`, all associated location provider libraries are included.
 
@@ -58,8 +58,6 @@ In the Android manifest, the following permissions are needed:
 <uses-permission android:name="android.permission.WAKE_LOCK"/>
 <uses-feature android:name="android.hardware.bluetooth_le" android:required="false"/>
 ```
-
-Note that BLE and Android SDK version 4.3 (API 18) or above are required if Bluetooth is actually is going to be used. If your users only are going to use Bluetooth for positioning, you should change the android:required attribute to true (this will filter out non-BLE devices at Google Play). Observe that the WAKE_LOCK permission can be removed, but background navigation performance might become worse.
 
 Integration
 -----------

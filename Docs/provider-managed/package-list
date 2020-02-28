@@ -5,8 +5,10 @@ com.phunware.location.provider_managed.cmx.mars
 com.phunware.location.provider_managed.config
 com.phunware.location.provider_managed.fingerprinting
 com.phunware.location.provider_managed.internal
+com.phunware.location.provider_managed.internal.config
 com.phunware.location.provider_managed.internal.io
 com.phunware.location.provider_managed.internal.service
 com.phunware.location.provider_managed.internal.storage
+com.phunware.location.provider_managed.internal.transform
 com.phunware.location.provider_managed.model
 com.phunware.location.provider_managed.wrapper
