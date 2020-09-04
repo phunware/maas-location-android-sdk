@@ -1,5 +1,16 @@
 # Location SDK Migration Guide
 
+## Upgrade from 3.7.8 to 3.7.9
+
+#### General
+
+This release has bug fixes and performance improvements.
+
+#### Upgrade Steps
+
+1. Open the `build.gradle` from your project and change the implementation statement to `com.phunware.location:location:3.7.9` and then sync the project.
+
+
 ## Upgrade from 3.7.x to 3.7.8
 
 #### General
