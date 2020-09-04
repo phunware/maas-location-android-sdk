@@ -1,4 +1,11 @@
 # Location SDK Changelog
+
+## 3.7.9 (Thursday, July 23rd, 2020)
+#### Bug fixes / performance enhancements
+* Upgraded to Mist 2.0.110 to support Android 10 devices
+* Upgraded to Core 3.5.2
+* Updated other third party dependencies
+
 ## 3.7.8 (Friday, February 28th, 2020)
 #### Bug fixes / performance enhancements
 * Added support for Centrak beacons
