@@ -57,20 +57,14 @@ To use any of the Phunware MaaS SDKs you'll need to add the following entries to
 
 ### Usage
 #### Creating a Location Provider
-To get location updates from the Location SDK, you first need to create a Location Provider.
-If you have beacons setup on MaaS and want to get location updates from beacons, use a `PwManagedLocationProvider`:
+To get location updates from the Location SDK, you first need to create a Location Provider. You can do so by instantiating a `PwManagedLocationProvider` like in the example below:
 
 ```kotlin
 val provider = PwManagedLocationProvider(application: Application, buildingId: Long, errorListener: PwErrorListener?)
 ```
 
-If you want to get GPS location updates, use a `PwGpsLocationProvider`:
-```kotlin
-val provider = PwGpsLocationProvider(applicationContext: Context)
-```
-
 #### Listening to location updates
-After creating your provider, you can listen to location updates by calling `requestLocationUpdates()` on your provider, passing an implementation of `PwLocationListener`:
+After creating your provider, you can listen to location updates by calling `requestLocationUpdates()` on your provider and passing an implementation of `PwLocationListener`:
 
 ```kotlin
 provider.requestLocationUpdates(object : PwLocationListener {
