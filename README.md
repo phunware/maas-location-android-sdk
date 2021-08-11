@@ -1,114 +1,91 @@
-# PWLocation SDK for Android
-================
+# Phunware Location SDK for Android
 
-Version 3.7.9
+[![Nexus](https://img.shields.io/nexus/r/com.phunware.location/provider-managed?color=brightgreen&server=https%3A%2F%2Fnexus.phunware.com)](https://nexus.phunware.com/content/groups/public/com/phunware/location/provider-managed/)
 
-This is Phunware's Android SDK for the Location module. Visit http://maas.phunware.com/ for more details and to sign up.
+Phunware's Location SDK for Android. Visit https://www.phunware.com/ for more information or [sign into the MaaS Portal](http://maas.phunware.com/) to set up your venue.
 
+### Requirements
+* minSdk 23.
+* AndroidX.
 
+### Supported Architectures
+* armeabi-v7a
+* arm64-v8a
+* x86_64
+* x86
 
-Requirements
-------------
-* Android SDK 5.0+ (API level 21) or above
-* Architectures supported: armeabi-v7a, arm64-v8a
-* Android Support Library 28.0.0
-
-
-Documentation
--------------
-
-Phunware Location documentation is included both in the Documents folder in the repository as HTML and via maven. You can also find the latest documentation here: http://phunware.github.io/maas-location-android-sdk/
-
-
-Prerequisites
--------------
-
-Add the following to your `repositories` tag in your top level `build.gradle` file.
-
- ```XML
- projects {
-   repositories {
-     ...
-     maven {
-         url "https://nexus.phunware.com/content/groups/public/"
-     }
-     ...
-   }
- }
+### Download
+Add the following repository to your top level `build.gradle` file.
+ ```groovy
+repositories {
+    maven {
+            url "https://nexus.phunware.com/content/groups/public/"
+        }
+}
  ```
 
- The location library is broken into separate components so that you can import only the parts of the library needed for your project. All packages can be imported by adding the following to your app's `build.gradle` file
- ```
- implementation 'com.phunware.location:provider-managed:3.7.9'
- implementation 'com.phunware.location:location-core:3.7.9'
- ```
- Importing any of the providers will automatically include the `core` package. When you import `provider-managed`, all associated location provider libraries are included.
-
-Needed Permissions
------------
-In the Android manifest, the following permissions are needed:
-
+ Add the following dependency to your app level `build.gradle` file.
+```groovy
+dependencies {
+    implementation "com.phunware.location:provider-managed:<version>"
+}
 ```
-<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+### Android project setup
+##### Keys
+To use any of the Phunware MaaS SDKs you'll need to add the following entries to your AndroidManifest.xml, making sure to replace the `value` properties with your actual App ID and Access Key:
+
+``` xml
+<meta-data
+    android:name="com.phunware.maas.APPLICATION_ID"
+    android:value="YOUR_APP_ID"/>
+
+<meta-data
+    android:name="com.phunware.maas.ACCESS_KEY"
+    android:value="YOUR_ACCESS_KEY"/>
+```
+
+##### Permissions
+```xml
 <uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-<uses-permission android:name="android.permission.BLUETOOTH"/>
-<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-<uses-permission android:name="android.permission.WAKE_LOCK"/>
-<uses-feature android:name="android.hardware.bluetooth_le" android:required="false"/>
+<uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+<uses-permission android:name="android.permission.BLUETOOTH" />
+<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 ```
 
-Integration
------------
+### Usage
+#### Creating a Location Provider
+To get location updates from the Location SDK, you first need to create a Location Provider.
+If you have beacons setup on MaaS and want to get location updates from beacons, use a `PwManagedLocationProvider`:
 
-#### PwManagedLocationProvider
-The PwManagedLocationProvider class allows you to implement Phunware's managed location software to further improve upon locations from your location provider hardware. Currently supported location providers are: CMX, CMX + BLE, BLE, and vBLE (Mist/BeaconPoint). From a code standpoint, setting up a managed location provider is the same regardless of your setup. All of these attributes are set through the MaaS portal for the specific providers that are used. The builder pattern only requires instances of the application, context, and buildingId you are using.
-
-```java
-// Create ManagedLocationProviderFactoryBuilder
-ManagedProviderFactory.ManagedProviderFactoryBuilder builder =
-new ManagedProviderFactory.ManagedProviderFactoryBuilder();
-
-//build location provider
-PwManagedLocationProvider provider = builder.application(mApplication)
-      .context(mContext)
-      .buildingId(<!--YOUR_BUILDING_ID-->)
-      .build()
-      .createLocationProvider();
+```kotlin
+val provider = PwManagedLocationProvider(application: Application, buildingId: Long, errorListener: PwErrorListener?)
 ```
 
-#### Location Updates
-```java
-PwLocationListener listener = new PwLocationListener() {
-  @Override
-  public void onConnectionFailed(PwConnectionResult pwConnectionResult) {
-    // handle failure...    
-  }
-
-  @Override
-  public void onLocationChanged(Location location) {
-    // handle update...
-  }
-
-  @Override
-  public void onStatusChanged(String s, int i, Bundle bundle) {
-    // handle status change...
-  }
-
-  @Override
-  public void onProviderEnabled(String s) {
-    // handle provider change...
-  }
-
-  @Override
-  public void onProviderDisabled(String s) {
-    // handle provider change...  
-  }
-};
-
-locationProvider.requestLocationUpdates(listener);
+If you want to get GPS location updates, use a `PwGpsLocationProvider`:
+```kotlin
+val provider = PwGpsLocationProvider(applicationContext: Context)
 ```
+
+#### Listening to location updates
+After creating your provider, you can listen to location updates by calling `requestLocationUpdates()` on your provider, passing an implementation of `PwLocationListener`:
+
+```kotlin
+provider.requestLocationUpdates(object : PwLocationListener {
+        override fun onLocationChanged(location: Location) {
+            // Handle new location.
+        }
+
+        override fun onLocationUpdateFailed(pwLocationUpdateResult: PwLocationUpdateResult?) {
+            // Handle failure.
+        }
+    }
+)
+```
+
+You're all set to receive location updates in your App!
 
 Privacy
 -----------
