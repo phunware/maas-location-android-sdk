@@ -355,7 +355,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release (BETA)
 
-[4.0.0]: https://github.com/phunware/maas-location-android-sdk/compare/v3.7.9...v4.0.0
+[4.0.0]: https://github.com/phunware/maas-location-android-sdk/compare/v3.7.9...4.0.0
 [3.7.9]: https://github.com/phunware/maas-location-android-sdk/compare/v3.7.8...v3.7.9
 [3.7.8]: https://github.com/phunware/maas-location-android-sdk/compare/v3.7.7...v3.7.8
 [3.7.7]: https://github.com/phunware/maas-location-android-sdk/compare/v3.7.6...v3.7.7
