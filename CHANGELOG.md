@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.1.0][] - 2022-07-21
+
+### Changed
+
+- Improved loading time for large venues
+- Reduced logging during initialization
+
+### Fixed
+
+- Updated all used hardware and sensors to be considered optional
+
 ## [4.0.0][] - 2021-08-11
 
 ### Added
@@ -355,6 +366,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release (BETA)
 
+[4.1.0]: https://github.com/phunware/maas-location-android-sdk/compare/4.0.0...4.1.0
 [4.0.0]: https://github.com/phunware/maas-location-android-sdk/compare/v3.7.9...4.0.0
 [3.7.9]: https://github.com/phunware/maas-location-android-sdk/compare/v3.7.8...v3.7.9
 [3.7.8]: https://github.com/phunware/maas-location-android-sdk/compare/v3.7.7...v3.7.8
