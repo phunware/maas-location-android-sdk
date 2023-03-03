@@ -16,15 +16,15 @@ Phunware's Location SDK for Android. Visit https://www.phunware.com/ for more in
 
 ### Download
 Add the following repository to your top level `build.gradle` file.
- ```groovy
+```groovy
 repositories {
     maven {
-            url "https://nexus.phunware.com/content/groups/public/"
-        }
+        url "https://nexus.phunware.com/content/groups/public/"
+    }
 }
- ```
+```
 
- Add the following dependency to your app level `build.gradle` file.
+Add the following dependency to your app level `build.gradle` file.
 ```groovy
 dependencies {
     implementation "com.phunware.location:provider-managed:<version>"
@@ -35,7 +35,7 @@ dependencies {
 ##### Keys
 To use any of the Phunware MaaS SDKs you'll need to add the following entries to your AndroidManifest.xml, making sure to replace the `value` properties with your actual App ID and Access Key:
 
-``` xml
+```xml
 <meta-data
     android:name="com.phunware.maas.APPLICATION_ID"
     android:value="YOUR_APP_ID"/>
@@ -47,16 +47,16 @@ To use any of the Phunware MaaS SDKs you'll need to add the following entries to
 
 ##### Permissions
 ```xml
-<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
 <uses-permission
-        android:name="android.permission.BLUETOOTH"
-        android:maxSdkVersion="30" />
+    android:name="android.permission.BLUETOOTH"
+    android:maxSdkVersion="30" />
 <uses-permission
-        android:name="android.permission.BLUETOOTH_ADMIN"
-        android:maxSdkVersion="30" />
+    android:name="android.permission.BLUETOOTH_ADMIN"
+    android:maxSdkVersion="30" />
 <!-- Optional: Derive physical location updates when app is not visible -->
 <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 ```
@@ -73,11 +73,12 @@ val provider = PwManagedLocationProvider(application: Application, buildingId: L
 After creating your provider, you can listen to location updates by calling `requestLocationUpdates()` on your provider and passing an implementation of `PwLocationListener`:
 
 ```kotlin
-provider.requestLocationUpdates(object : PwLocationListener {
+provider.requestLocationUpdates(
+    object : PwLocationListener {
         override fun onLocationChanged(location: Location) {
             // Handle new location.
         }
-
+                    
         override fun onLocationUpdateFailed(pwLocationUpdateResult: PwLocationUpdateResult?) {
             // Handle failure.
         }
@@ -94,3 +95,4 @@ You understand and consent to Phunware’s Privacy Policy located at www.phunwar
 Terms
 -----------
 Use of this software requires review and acceptance of our terms and conditions for developer use located at http://www.phunware.com/terms/
+
